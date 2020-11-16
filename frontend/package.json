@@ -1,0 +1,23 @@
+{
+  "name": "pacman-game",
+  "version": "0.0.1",
+  "description": "Schulprojekt Pacman-Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeluTrix/pacman-project.git"
+  },
+  "author": "Marlon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeluTrix/pacman-project/issues"
+  },
+  "homepage": "https://github.com/TeluTrix/pacman-project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
