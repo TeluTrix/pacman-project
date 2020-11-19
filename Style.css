@@ -36,3 +36,129 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.75rem;
 }
+
+#score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 55px;
+    border: 5px navy solid;
+    background: black;
+    margin-top: 22px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.2rem;
+}
+
+#game-start-button {
+    margin-top: 18px;
+}
+
+.hide {
+    display: none;
+}
+
+.square {
+    display: block;
+}
+
+.empty {
+    background: black;
+}
+
+.wall {
+    border: 1.2px solid darkblue;
+}
+
+.point {
+    background: white;
+    border: 8px black;
+    border-radius: 50%;
+}
+
+.tablet {
+    background: white;
+    border: 4px black;
+    border-radius: 50%;
+}
+
+.pacman {
+    background: yellow;
+    border: none;
+    border-radius: 50%;
+    clip-path: polygon(
+        0 0,
+        20px 0
+        20px -5px
+        8px 10px
+        20px 25px
+        20px 20px
+        0 20px
+    );
+    animation: chew 0.2 linear forwards infinite;
+}
+
+.ghost {
+    position: relative;
+    border-radius: 9px 11px 2px 2px;
+    border: none;
+}
+
+.ghost::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2.8px;
+    height: 2.8px;
+    background: black;
+    border-radius: 50%;
+    left: 4px;
+    top: 5px;
+    border: 2px solid white;
+}
+
+.ghost::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2.8px;
+    height: 2.8px;
+    background: black;
+    border-radius: 50%;
+    left: 4px;
+    top: 5px;
+    border: 2px solid white;
+}
+
+.afraid_ghost {
+    background: blue !important;
+}
+
+.pinky {
+    background: pink;
+}
+
+.inky {
+    background: cyan;
+}
+.blinky {
+    background: red;
+}
+.clyde {
+    background: orange;
+}
+
+@keyframes chew {
+    50% {
+      clip-path: polygon(
+        0 0,
+        20px 0,
+        20px 10px,
+        8px 10px,
+        20px 10px,
+        20px 20px,
+        0 20px
+        );
+    }
+}
