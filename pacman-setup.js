@@ -32,7 +32,7 @@ export const OBJECT_TYPE = {
     EMPTY: 'empty', 
     WALL: 'wall',   
     POINT: 'point',
-    TABLET: 'tablet',
+    Pill: 'pill',
     PACMAN: 'pacman',
     GHOST: 'ghost',
     PINKY: 'pinky',

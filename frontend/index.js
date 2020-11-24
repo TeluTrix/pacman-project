@@ -1,4 +1,7 @@
 import { LEVEL_RASTER, OBJECT_TYPE } from './setup'
+// Classes
+import GameBoard from './GameBoard';
+
 
 const express = require('express');
 const app = express();
@@ -20,6 +23,7 @@ const StartButton = document.querySelector('#start-button');
 // Game Constants
 const POWER_PILL_TIME = 10000; //In Millisekunden
 const GLOBAL_SPEED = 80; //In Millisekunden
+const gameBoard = GameBoard.createGameBoard(GameRaster, LEVEL_RASTER);
 
 //Initial Setup
 let score = 0; //Punkte Zähler
@@ -29,7 +33,7 @@ let powerPillActive = false;
 let powerPillTimer = null;
 
 //Wenn Spiel vorbei / Game Over
-function gameOver (pacman, grid) {
+function gameOver (pacman, raster) {
 
 }
 //Schauen ob sich PacMan und ein Gegner begegnen
