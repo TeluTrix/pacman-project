@@ -14,7 +14,7 @@ class GameBoard {
         this.DOMRaster.appendChild(div);
     }
       
-    createGrid(LEVEL_RASTER){
+    createRaster(LEVEL_RASTER){
         this.pointCounter = 0;
         this.raster = [];
         this.DOMRaster.innerHTML = ''
@@ -22,7 +22,7 @@ class GameBoard {
       
         LEVEL_RASTER.forEach((square) => {
             const div = document.createElement('div');
-            div.classList.add('square', CLASS_LIST[square]);
+            div.classList.add('square', CLASS_LIST[square]); 
             div.style.cssText = `width: ${CELL_FRAME_SIZE}px; height: ${CELL_FRAME_SIZE}px;`;
             this.DOMRaster.appendChild(div);
             this.raster.push(div);
@@ -39,7 +39,7 @@ class GameBoard {
         this.raster[pos].classList.remove(...classes);
     }
     
-    objectExist(pos, ocject){
+    objectExist(pos, object){
         return this.raster[pos].classList.contains(object);
     }
 
@@ -47,9 +47,30 @@ class GameBoard {
         this.raster[pos].style.transform = `rotate(${deg}deg)`;
     }
 
+    moveCharacter(character){
+        if (character.shouldMove()){
+            const{ nextMovePos, direction } = character.getNextMove(
+                this.objectExist
+            );
+            const {classesToRemove, classesToAdd} = character.makeMove();
+            
+            if(character.rotation && nextMovePos !==character.pos){
+                this.rotateDiv(nextMovePos, character.direction.rotation);
+                this.rotateDiv(character.pos, 0);
+            }
+
+            this.removeObject(character.pos, classesToRemove);
+            this.addObject(nextMovePos, classesToAdd);
+
+            character.setNewPos(nextMovePos, direction);
+        }
+
+    }
+
+    
     static createGameBoard(DOMRaster, LEVEL_RASTER){
         const board = new this(DOMRaster);
-        board,createGrid(LEVEL_RASTER);
+        board,createRaster(LEVEL_RASTER);
         return board;
     }
 }  
