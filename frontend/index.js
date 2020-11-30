@@ -1,6 +1,9 @@
-import { LEVEL_RASTER, OBJECT_TYPE } from './setup'
+import { LEVEL_RASTER, OBJECT_TYPE } from './setup';
+import { randomMovement } from './ghostMoves';
 // Classes
-import GameBoard from './GameBoard';
+import GameBoard from './gameBoard';
+import Pacman from './pacman';
+import Ghosts from './ghost';
 
 
 const express = require('express');
@@ -46,5 +49,22 @@ function gameLoop(pacman, ghosts){
 }
 //Spiel starten
 function startGame(){
+    gameWin = false;
+    powerPillActive = false,
+    score = 0;
+
+    StartButton.classList.add('hide');
+
+    gameBoard.createRaster(LEVEL_RASTER);
+
+    const pacman = new Pacman(2, 287);
+    gameBoard.addObject(287, [OBJECT_TYPE.PACMAN]);
+    document.addEventListener('keydown', (e) =>
+        pacman.handleKeyInput(e, gameBoard.objectExist)
+    );
 
 }
+
+//Initialize game
+StartButton.addEventListener('click', startGame)
+
