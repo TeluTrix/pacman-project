@@ -4,7 +4,8 @@
   "description": "Schulprojekt Pacman-Game",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,17 @@
     "url": "https://github.com/TeluTrix/pacman-project/issues"
   },
   "homepage": "https://github.com/TeluTrix/pacman-project#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "eslint": "^7.14.0",
+    "eslint-config-defaults": "^9.0.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "dependencies": {}
 }
