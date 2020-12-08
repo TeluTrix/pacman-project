@@ -1,18 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.e308ff8e.css">
-    <title>Pacman Game</title>
-  <script src="/style.e308ff8e.js"></script></head>
-  <body>
-    <div id="wrapper">
-      <div id="game"></div>
-      <div id="score"></div>
-      <button id="start-button">Starte Game</button>
-    </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pacman - The Game</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://fonts.cdnfonts.com/css/joystix" rel="stylesheet">
+  <link rel="stylesheet" href="/style.e308ff8e.css">
+  <title>Pacman Game</title>
+</head>
+
+<body>
+  <h1 class="title is-2  has-text-centered mt-6 mb-6" style="color: red; font-family: 'Joystix'">Pacman - The Game</h1>
+  <div id="wrapper">
+    <div id="game"></div>
+    <div id="score"></div>
+
     <script src="/frontend.e31bb0bc.js"></script>
-  </body>
+
+    <div id="startScreen" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-body">
+          <h1 class="title is-3 has-text-centered mt-2" style="color: red; font-family: 'Joystix'">Highscore</h1>
+          <div id="highscoreValues" class="mb-6">
+          </div>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">Press "s" to
+            start a game</p>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">Press "q" to
+            abort a game</p>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">Press "p" to
+            pause a game</p>
+        </section>
+      </div>
+    </div>
+
+    <div id="pauseScreen" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-body">
+          <h1 class="title is-3 has-text-centered mt-2" style="color: red; font-family: 'Joystix'">Pause</h1>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">Game is paused.
+          </p>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">Resume by
+            pressing "r"</p>
+        </section>
+      </div>
+    </div>
+
+    <div id="userNameScreen" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-body">
+          <h1 class="title is-3 has-text-centered mt-2" style="color: red; font-family: 'Joystix'">Enter your name and
+            press enter</h1>
+          <input id="userName" class="input" style="font-family: 'Joystix'; color: black;" type="text" size="10" placeholder="Enter Your Name" onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+        </section>
+      </div>
+    </div>
+
+    <div id="gameOverScreen" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <section class="modal-card-body">
+          <h1 id="gameOverTitle" class="title is-3 has-text-centered mt-2" style="color: red; font-family: 'Joystix'"></h1>
+          <p class="has-text-centered is-size-5 mt-3" style="font-family: 'Joystix'; color: darkblue;">
+            Your score: <span id="gameOverScore"></span>
+          </p>
+          <p class="has-text-centered is-size-6 mt-3" style="font-family: 'Joystix'; color: darkblue;">
+            Your best score was: <span id="gameOverBestScore"></span> 
+          </p>
+          <p class="has-text-centered is-size-6" style="font-family: 'Joystix'; color: darkblue;">
+            on <span id="gameOverBestDate"></span>
+          </p>
+          <p class="has-text-centered is-size-5 mt-4" style="font-family: 'Joystix'; color: darkblue;">
+            Press "Enter" to proceed! 
+          </p>
+        </section>
+      </div>
+    </div>
+
+</div></body>
+
 </html>

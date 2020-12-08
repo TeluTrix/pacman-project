@@ -4,7 +4,7 @@
   "description": "Schulprojekt Pacman-Game",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel index.html --no-hmr",
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,5 +30,8 @@
       "@babel/plugin-transform-runtime"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "css-loader": "^5.0.1",
+    "jquery": "^3.5.1"
+  }
 }

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pacman.gibb</groupId>
-	<artifactId>HighscoreService</artifactId>
+	<artifactId>highscore-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HighscoreService</name>
 	<description>Rest service to handle the highscore for the pacman-game</description>
@@ -45,6 +45,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<layers>
+						<enabled>true</enabled>
+					</layers>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

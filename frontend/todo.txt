@@ -1,0 +1,5 @@
+Rename Style.css to style.cc! In index.html the file is referenced as style.css and can thus not be found in 
+an operating system that has a case sensitive file system. 
+
+Rename game-board and ghost-moves, pacman and ghost in index.html due to the same reason as mentioned above.
+
