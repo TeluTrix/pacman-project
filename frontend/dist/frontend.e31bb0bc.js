@@ -11913,13 +11913,6 @@ function enterName() {
   (0, _jquery.default)('#startScreen').removeClass('is-active');
   (0, _jquery.default)('#userNameScreen').addClass('is-active');
   (0, _jquery.default)("#userName").focus();
-  (0, _jquery.default)("#userName").on("keydown", function search(e) {
-    if (e.key == 'Enter') {
-      userName = (0, _jquery.default)("#userName").val().toLowerCase();
-      ;
-      startGame();
-    }
-  });
 }
 
 window.addEventListener('keyup', function (e) {
@@ -11945,6 +11938,13 @@ window.addEventListener('keyup', function (e) {
 }, true);
 (0, _jquery.default)(function () {
   highscore();
+  (0, _jquery.default)("#userName").on("keydown", function search(e) {
+    if (e.key == 'Enter') {
+      userName = (0, _jquery.default)("#userName").val().toLowerCase();
+      ;
+      startGame();
+    }
+  });
 });
 },{"./pacman-setup":"pacman-setup.js","./ghost-moves":"ghost-moves.js","./game-board":"game-board.js","./pacman":"pacman.js","./ghost":"ghost.js","jquery":"node_modules/jquery/dist/jquery.js","./sounds/munch.wav":"sounds/munch.wav","./sounds/pill.wav":"sounds/pill.wav","./sounds/game_start.wav":"sounds/game_start.wav","./sounds/death.wav":"sounds/death.wav","./sounds/eat_ghost.wav":"sounds/eat_ghost.wav"}]},{},["index.js"], null)
 //# sourceMappingURL=/frontend.e31bb0bc.js.map

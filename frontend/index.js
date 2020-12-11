@@ -219,13 +219,6 @@ function enterName() {
   $('#startScreen').removeClass('is-active');
   $('#userNameScreen').addClass('is-active');
   $("#userName").focus();
-
-  $("#userName").on("keydown", function search(e) {
-    if (e.key == 'Enter') {
-      userName = $("#userName").val().toLowerCase();;
-      startGame();
-    }
-  });
 }
 
 window.addEventListener('keyup', function (e) {
@@ -253,4 +246,13 @@ window.addEventListener('keyup', function (e) {
 
 $(function () {
   highscore();
+
+  
+  $("#userName").on("keydown", function search(e) {
+    if (e.key == 'Enter') {
+      userName = $("#userName").val().toLowerCase();;
+      startGame();
+    }
+  });
+  
 });
